@@ -1,0 +1,49 @@
+<div style="margin: 5%;">
+    <h2>Register Here....</h2>
+
+    <form action="submit" #registerForm="ngForm">
+
+        <div class="form-group">
+            <mat-form-field class="col-md-6" appearance="standard">
+                <input matInput name="username" [(ngModel)]="formData.username" type="text" class="form-control"
+                    #username="ngModel" placeholder="E-mail" required maxlength="50" />
+            </mat-form-field>
+
+        </div>
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger col-md-6">
+            <div *ngIf="username.errors?.['required']">
+                E-mail is required
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <mat-form-field class="col-md-6" appearance="standard">
+                <input matInput name="password" [(ngModel)]="formData.password" type="password" class="form-control"
+                    #password="ngModel" placeholder="Password" required maxlength="50" />
+            </mat-form-field>
+
+        </div>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger col-md-6">
+            <div *ngIf="password.errors?.['required']">
+                Password is required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="col-md-6" appearance="standard">
+                <input matInput name="confirmPassword" [(ngModel)]="formData.confirmPassword" type="password"
+                    class="form-control" #confirmPassword="ngModel" placeholder="Password" required maxlength="50" />
+            </mat-form-field>
+
+        </div>
+        <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+            class="alert alert-danger col-md-6">
+            <div *ngIf="confirmPassword.errors?.['required']">
+                Password is required
+            </div>
+        </div>
+
+        <button type="submit" [disabled]=!registerForm.valid (click)="register()">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+.vehicles
+{
+    width: 100%;
+    margin-top: 5px;
+    line-height:110%;
+    height: 100%;
+    padding: 2%;
+    text-align: left;
+    background-color: dimgray;
+}
+
+.cart
+{   
+    margin: 20px;
+    width: 50%;
+    float: left;
+    padding: 2%;
+    
+}
+
+.cards
+{
+    float: left;
+    width: 45%;
+    margin: 2%;
+    background-color: dimgray;
+    
+}

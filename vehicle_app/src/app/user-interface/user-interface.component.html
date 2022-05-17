@@ -1,0 +1,28 @@
+<div style="width: 40%;float: left;margin-top: 45px;" >
+  <div class="vehicles" *ngFor="let vd of vehicleDetails">
+    {{vd.vehicleType}}
+    <br>
+    {{vd.vehicleModel}}
+    <button mat-raised-button color="primary" style="margin-top: -15px;float: right;" (click)="addToCart(vd)">
+      ADD
+    </button>
+  </div>
+</div>
+
+<div class="cart">
+  <h3>CART</h3>
+  <div class="cards" *ngFor="let vehicle of vehiclesInCart">
+    <div style="margin: 5%;width: 60%;float: left;">
+      {{vehicle.vehicle.vehicleModel}}
+    <br>
+    {{vehicle.vehicle.vehicleType}}
+    <br>
+    {{vehicle.vehicle.vehicleManufDate}}
+    </div>
+    <br>
+    <div style="float: right;"> 
+    <button mat-raised-button color="primary" (click)="deleteItemFromCart(vehicle.cartId)" style="margin: 10px;">Delete</button>
+    </div>
+  </div>
+  <button mat-raised-button color="warn" style="float:inline-end;">Proceed</button>
+</div>
